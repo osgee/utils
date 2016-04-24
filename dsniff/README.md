@@ -60,5 +60,5 @@ spoof machine with ip 192.168.0.49 on mac address of 192.168.0.1 by mac address 
 
 ## ssl strip
 
-	sshstrip -a -l 8000 -w sslstrip.log
+	sslstrip -a -l 8000 -w sslstrip.log
 
