@@ -4,6 +4,7 @@
 
 	vi <file>
 
+
 ### File
 	
 	:x # exit and save changes
@@ -13,6 +14,7 @@
 	:w file # write to file
 	:r file # read file in after line
 	:e file # edit file
+
 
 ### Insert
 
@@ -26,9 +28,11 @@
 	r # replace one character
 	R # replace many characters
 
+
 ### Exit Insert
 
 	esc # return to command mode
+
 
 ### Motion
 
@@ -53,6 +57,7 @@
 	M # move to middle of the screen
 	L # move to botton of the screen
 
+
 ### Modify
 
 #### Delete
@@ -64,6 +69,7 @@
 	:d # delete current line
 	dl # delete the letter
 	dw # delete the word
+
 	
 #### Yank
 
@@ -71,6 +77,7 @@
 	:y # copy the current line
 	yl # copy the curren letter
 	yw # copy the current word, cursor must on first letter of the word
+
 	
 #### Change
 
@@ -79,25 +86,30 @@
 	cl # change the letter
 	cw # change the word
 
+
 #### Put
 
 	p # put after the position or after the line
 	P # put before the position or before the line
+
  
 #### Undo
 	
 	u # undo last revision
 	U # undo all revisions
 
+
 #### Redo
 	
 	^C+r # redo last undo
+
 
 #### Other
 	
 	~ # toggle up and lower case
 	J # join lines
 	. # repeat last text-changing command
+
 
 #### Replace
 
@@ -113,6 +125,7 @@
 	?text # search backward
 	n # search next match
 	N # search previous match
+
 
 ### Range
 
