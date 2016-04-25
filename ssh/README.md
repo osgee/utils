@@ -1,3 +1,42 @@
+# install
+
+packages on <a href="http://mirror.centos.org/centos/7/os/x86_64/Packages/">centos 7 mirror</a>
+packages on <a href="http://mirror.centos.org/centos/6/os/x86_64/Packages/">centos 6 mirror</a>
+
+## server
+on ubuntu 
+
+	sudo apt -y update
+	sudo apt install openssh-server
+
+optional
+
+	service sshd start
+	
+on centos
+
+	sudo yum install openssh-server
+	sudo chkconfig --list sshd
+
+start service
+
+	sudo systemctl sshd start 
+
+or 
+
+	/etc/init.d/sshd start
+
+## client
+on ubuntu
+
+	sudo apt -y update
+	sudo apt install openssh-client
+
+on centos
+
+	wget http://mirror.centos.org/centos/7/os/x86_64/Packages/openssh-clients-6.6.1p1-22.el7.x86_64.rpm
+	rpm -ivh openssh-clients-6.6.1p1-22.el7.x86_64.rpm
+	
 # ssh-keygen
 
 	$ ssh-keygen -t rsa -b 2048 -P '' -f ~/.ssh/id_rsa
