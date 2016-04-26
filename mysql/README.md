@@ -40,6 +40,8 @@ mysql>
         update user set Password=PASSWORD('password') where USER='root';         
         flush privileges;
         \q;
-                                                                                                                                     
+
+restart mysql
+
         sudo service mysql start
 
