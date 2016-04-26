@@ -62,7 +62,13 @@ on centos
 
 using tar compression
 
-	$ tar -zcvf - destination/ | ssh USER@HOST "tar -zxvf - -C /source"
+local -> remote
+
+	$ tar -zcvf - source/ | ssh USER@HOST "tar -zxvf - -C /destination"
+
+local <- remote
+
+	$ tar -zxvf - -C destination/ < <(ssh USER@HOST "tar -zcvf - /source")
 
 for large file
 
