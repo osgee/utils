@@ -46,6 +46,8 @@ privilage
 
 ### Commands
 
+#### Motion Commands
+
         iptables -h # help
         iptables -L # list rules
         iptables -L -t mangle # list rules in table mangle
@@ -57,9 +59,7 @@ privilage
         iptables-save > somefile
         iptables-restore < somefile
 
-### Configure 
-
-using commands
+#### Configuration Commands
 
         iptables -A INPUT -p tcp -s 192.168.0.0/24 --dport 80 -j ACCEPT 
 
@@ -98,7 +98,9 @@ if there are conflicts in rules, caculated rules according to rules with higher 
 -s -p --sport --dport can be omitted which means any
 
 
-examples
+### Configurations
+
+#### Examples
 
 normal web server with ssh service
 
@@ -156,7 +158,7 @@ preset rules
         
         iptables -A FORWARD -p icmp -m limit --limit 1/s --limit-burst 10 -j ACCEPT
 
-configure NAT
+#### Configure NAT
 
 init
 
