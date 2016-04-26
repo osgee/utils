@@ -156,4 +156,45 @@ preset rules
         
         iptables -A FORWARD -p icmp -m limit --limit 1/s --limit-burst 10 -j ACCEPT
 
+configure NAT
+
+init
+
+        iptables -t nat -L
+        iptables -F -t nat
+        iptables -X -t nat
+        iptables -Z -t nat
+ 
+ ban outside net access as subnet ip address
+
+        iptables -t nat -A PREROUTING -i eth0 -s 10.0.0.0/8 -j DROP
+        iptables -t nat -A PREROUTING -i eth0 -s 172.16.0.0/12 -j DROP
+        iptables -t nat -A PREROUTING -i eth0 -s 192.168.0.0/16 -j DROP
+
+ban specific ip 211.101.46.253
+
+        iptables -t nat -A PREROUTING -d 211.101.46.253 -j DROP
+
+ban specific application, FTP(21)
+
+        iptables -t nat -A PREROUTING -p tcp --dport 21 -j DROP
+
+more accurate one
+
+        iptables -t nat -A PREROUTING -p tcp --dport 21 -d 211.101.46.253 -j DROP
+
+drop invalid links
+
+        iptables -A INPUT   -m state --state INVALID -j DROP
+        iptables -A OUTPUT  -m state --state INVALID -j DROP
+        iptables -A FORWARD -m state --state INVALID -j DROP
+
+        iptables -A INPUT   -m state --state ESTABLISHED,RELATED -j ACCEPT
+        iptables -A OUTPUT  -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+apply settings
+
+        /etc/rc.d/init.d/iptables save
+        service iptables restart
+
 more <a href="http://www.cnblogs.com/argb/p/3535179.html">examples</a>
