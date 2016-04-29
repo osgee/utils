@@ -157,7 +157,7 @@ tshart can be replaced by tcpdump
 	
 # sshfs
 
-	$ sshfs USER@HOST:/path/to/folder /paht/to/mount/point
+	$ sshfs USER@HOST:/path/to/folder /path/to/mount/point
 
 
 
