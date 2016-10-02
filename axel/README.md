@@ -34,7 +34,7 @@ or
 	-n number of threads
 	-o save to file
 	-s max speed
-	-q quit download
+	-q quite download
 
 ### eg.
 
