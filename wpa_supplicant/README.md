@@ -23,4 +23,18 @@ add follow command in the end
 reload .bashrc
 
 	$ source ~/.bashrc
+	
+### sample of config 
+
+	update_config=1
+	network={
+		ssid="dddd"
+		scan_ssid=1
+		#psk="23456789"
+		psk=9a2b010602a92b62fe766450f5c66ebb05171954f5282c288e898dbc0c6c63b7
+		proto=RSN
+		key_mgmt=WPA-PSK
+		pairwise=CCMP
+		auth_alg=OPEN
+	}
 
