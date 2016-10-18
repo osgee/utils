@@ -29,15 +29,13 @@ data dump
 
 #### Create Database
 
-
         CREATE DATABASE `db_name`;
         USE db_name;
 
 
 #### Create/Drop Table
 
-
-        CREATE TABLE `tb_name`
+        CREATE TABLE `tb_name`
         (
         id INT(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
         name VARCHAR(25) NOT NULL,
@@ -50,8 +48,7 @@ data dump
            
 #### Field/FK
 
-
-        ALTER TABLE tb_dept ADD column1 VARCHAR(11) NOT NULL;
+        ALTER TABLE tb_dept ADD column1 VARCHAR(11) NOT NULL;
         ALTER TABLE tb_dept ADD column2 INT(11) FIRST;
         ALTER TABLE tb_dept ADD column3 AFTER name;
         ALTER TABLE tb_Dept MODIFY column1 VARCHAR(12) AFTER location;
@@ -90,15 +87,13 @@ data dump
         
 #### View
 
-
         CREATE VIEW view_name AS SELECT ...;
         UPDATE view_name SET ...;
         
+        
 #### Trigger
 
-
         CREATE TRIGGER trigger_name trigger_time trigger_event ON tb_name FOR EACH ROW trigger_stmt;
-        
         CREATE TRIGGER ins_sum 
         BEFORE INSERT ON account 
         FOR EACH ROW 
@@ -107,12 +102,10 @@ data dump
         
 #### Insert
 
-
         INSERT INTO tb_name(...) values(...),(...),...;
         
         
 #### User 
-
 
         CREATE USER 'jeffery'@'localhost' IDENTIFIED BY 'mypass';
         GRANT privileges ON db.table TO user@host [IDENTIFIED BY 'password'] [WITH GRANT OPTION];
