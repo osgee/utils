@@ -19,6 +19,10 @@ enable it
 
 	sysctl -p
 
+on kali
+
+	echo 1 > /proc/sys/net/ipv4/ip_forward
+
 ## port redirect
 
 on mac <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man5/pf.conf.5.html" >pf</a> 
