@@ -27,12 +27,12 @@ data dump
         
 ### Basic
 
-Create Database
+#### Create Database
 
         CREATE DATABASE `db_name`;
         USE db_name;
 
-Create/Drop Table
+#### Create/Drop Table
 
         CREATE TABLE `tb_name`
         (
@@ -43,9 +43,8 @@ Create/Drop Table
         )DEFAULT CHARSET=`utf8` AUTO_INCREMENT=1;
         
         DROP TABLE IF EXISTS tb_dept;
-        
-        
-Field/FK
+           
+#### Field/FK
 
         ALTER TABLE tb_dept ADD column1 VARCHAR(11) NOT NULL;
         ALTER TABLE tb_dept ADD column2 INT(11) FIRST;
@@ -53,7 +52,11 @@ Field/FK
         ALTER TABLE tb_Dept MODIFY column1 VARCHAR(12) AFTER location;
         UPDATE article a SET a.journalid=10 WHERE a.journalid=20;
         DELETE from journal WHERE journalid=20;
-        ALTER TABLE `article` ADD CONSTRAINT `c_article_journal_FK` FOREIGN KEY (`journalid`)  REFERENCES `journal` (`journalid`);
+        
+        ALTER TABLE `article` 
+        ADD CONSTRAINT `c_article_journal_FK` 
+        FOREIGN KEY (`journalid`)  
+        REFERENCES `journal` (`journalid`);
         
         UPDATE article SET article.journalid =3 
         WHERE article.journalid IN
@@ -79,22 +82,26 @@ Field/FK
         GROUP BY journalid 
         ORDER BY COUNT(*) ASC;
         
-View
+#### View
 
         CREATE VIEW view_name AS SELECT ...;
         UPDATE view_name SET ...;
         
-Trigger
+#### Trigger
 
         CREATE TRIGGER trigger_name trigger_time trigger_event ON tb_name FOR EACH ROW trigger_stmt;
-        CREATE TRIGGER ins_sum BEFORE INSERT ON account FOR EACH ROW SET @sum=@sum+NEW.amount;
+        
+        CREATE TRIGGER ins_sum 
+        BEFORE INSERT ON account 
+        FOR EACH ROW 
+        SET @sum=@sum+NEW.amount;
         
         
-Insert
+#### Insert
 
         INSERT INTO tb_name(...) values(...),(...),...;
         
-User 
+#### User 
 
         CREATE USER 'jeffery'@'localhost' IDENTIFIED BY 'mypass';
         GRANT privileges ON db.table TO user@host [IDENTIFIED BY 'password'] [WITH GRANT OPTION];
