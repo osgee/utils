@@ -87,20 +87,23 @@ data dump
         
 #### View
 
-        CREATE VIEW view_name AS SELECT ...;
-        UPDATE view_name SET ...;
+
+        CREATE VIEW view_name AS SELECT ...;
+        UPDATE view_name SET ...;
         
         
 #### Trigger
 
+
         CREATE TRIGGER trigger_name trigger_time trigger_event ON tb_name FOR EACH ROW trigger_stmt;
-        CREATE TRIGGER ins_sum 
+        CREATE TRIGGER ins_sum 
         BEFORE INSERT ON account 
         FOR EACH ROW 
         SET @sum=@sum+NEW.amount;
         
         
 #### Insert
+
 
         INSERT INTO tb_name(...) values(...),(...),...;
         
