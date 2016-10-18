@@ -29,10 +29,13 @@ data dump
 
 #### Create Database
 
+
         CREATE DATABASE `db_name`;
         USE db_name;
 
+
 #### Create/Drop Table
+
 
         CREATE TABLE `tb_name`
         (
@@ -44,7 +47,9 @@ data dump
         
         DROP TABLE IF EXISTS tb_dept;
            
+           
 #### Field/FK
+
 
         ALTER TABLE tb_dept ADD column1 VARCHAR(11) NOT NULL;
         ALTER TABLE tb_dept ADD column2 INT(11) FIRST;
@@ -82,12 +87,15 @@ data dump
         GROUP BY journalid 
         ORDER BY COUNT(*) ASC;
         
+        
 #### View
+
 
         CREATE VIEW view_name AS SELECT ...;
         UPDATE view_name SET ...;
         
 #### Trigger
+
 
         CREATE TRIGGER trigger_name trigger_time trigger_event ON tb_name FOR EACH ROW trigger_stmt;
         
@@ -99,9 +107,12 @@ data dump
         
 #### Insert
 
+
         INSERT INTO tb_name(...) values(...),(...),...;
         
+        
 #### User 
+
 
         CREATE USER 'jeffery'@'localhost' IDENTIFIED BY 'mypass';
         GRANT privileges ON db.table TO user@host [IDENTIFIED BY 'password'] [WITH GRANT OPTION];
