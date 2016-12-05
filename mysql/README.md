@@ -127,7 +127,7 @@ data dump
         mysql -uroot mysql
 ```
 mysql> 
-```mysql
+```sql
         show databases;
         use mysql;
         show tables;
