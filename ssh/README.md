@@ -159,5 +159,13 @@ tshart can be replaced by tcpdump
 
 	$ sshfs USER@HOST:/path/to/folder /path/to/mount/point
 
+# Hardware-based SSH/GPG agent
+
+	This [project](https://github.com/romanz/trezor-agent) allows you to use various hardware security devices to operate GPG and SSH. Instead of keeping your key on your computer and decrypting it with a passphrase when you want to use it, the key is generated and stored on the device and never reaches your computer. Read more about the design here.
+
+You can do things like sign your emails, git commits, and software packages, manage your passwords (with pass and gopass, among others), authenticate web tunnels and file transfers, and more.
+
+
+
 
 
